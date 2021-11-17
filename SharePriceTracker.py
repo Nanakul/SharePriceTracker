@@ -22,6 +22,17 @@ def track_share() -> None:
     """
     print(data)
 
+# Function that checks the last change in volatility of the stock
+def volitility_check():
+    """This function will check the last change in volatility of the given stock.
+    """
+    closing_data = data['4. close']
+    percent_change = closing_data.pct_change()
+    print(percent_change)
+    
+    last_change = percent_change[-1]
+    print('The last change was: {}'.format(last_change))
+
 # Function to move panda frame data to excel
 def output_excel() -> None:
     """This function will take the data and store it in an excel file every minute for 1 hour. 
@@ -36,4 +47,5 @@ def output_excel() -> None:
 
 if __name__ == '__main__':
     track_share()
+    volitility_check()
     output_excel()
