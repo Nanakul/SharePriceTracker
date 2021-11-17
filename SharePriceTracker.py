@@ -21,6 +21,19 @@ def track_share() -> None:
     """This function will print the data of the company specified by the user.
     """
     print(data)
-    
+
+# Function to move panda frame data to excel
+def output_excel() -> None:
+    """This function will take the data and store it in an excel file every minute for 1 hour. 
+    """
+    i = 0
+    while i != 60:
+        data, meta_data = ts.get_intraday(symbol=share, interval='1min', outputsize='full')
+        data.to_excel('SharePrice.xlsx')
+        time.sleep(60)
+        i += 1
+        print('{} minute(s) has passed.'.format(i))    
+
 if __name__ == '__main__':
     track_share()
+    output_excel()
