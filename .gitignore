@@ -131,3 +131,6 @@ dmypy.json
 # API Key
 Secrets.json
 SharePrice.xlsx
+
+# Misc
+.DS_Store
