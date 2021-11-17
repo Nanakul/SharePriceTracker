@@ -16,5 +16,11 @@ share = input('Please enter the symbol of the company you would like to track: '
 # Variable for intraday TimeSeries
 data, meta_data = ts.get_intraday(symbol=share, interval='1min', outputsize='full')
 
-def track_share(data):
+# Function to track the share
+def track_share() -> None:
+    """This function will print the data of the company specified by the user.
+    """
     print(data)
+    
+if __name__ == '__main__':
+    track_share()
