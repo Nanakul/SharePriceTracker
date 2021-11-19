@@ -134,3 +134,10 @@ SharePrice.xlsx
 
 # Misc
 .DS_Store
+current_price.txt
+.idea/.gitignore
+.idea/SharePriceTracker.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
