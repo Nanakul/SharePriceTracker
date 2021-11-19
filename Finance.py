@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import yfinance as yf
+import time
 from datetime import datetime
 
 # Set Current date
@@ -62,8 +63,21 @@ def plot_history():
     plt.figure()
     plt.plot(stock_history['Close'])
     plt.show()
+    
+def track_current_price():
+    """This function will print out the current price of the given
+    company every minute for an hour (60 minutes).
+    """
+    minutes_passed = 0
+    while minutes_passed != 60:
+        current_price = selected_stock.info
+        print(current_price['currentPrice'])
+        time.sleep(60)
+        minutes_passed += 1
+        print(f'{minutes_passed} minute(s) passed.')
 
 if __name__ == '__main__':
     print_info()
     plot_dividends()
     plot_history()
+    track_current_price()
