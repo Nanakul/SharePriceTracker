@@ -49,9 +49,9 @@ def plot_dividends():
     plt.xlim(min_year,max_year)
     plt.show()
 
-def plot_history():
-    """This function will plot the market history of the company
-    from whenever the user specifies to the current date.
+def plot_history_close_price():
+    """This function will plot the closing price history of the 
+    given company from whenever the user specifies to the current date.
     """
     
     history_start = input('Starting date of history timeline? (year-month-day) Example: "2019-01-01": ')
@@ -79,5 +79,5 @@ def track_current_price():
 if __name__ == '__main__':
     print_info()
     plot_dividends()
-    plot_history()
+    plot_history_close_price()
     track_current_price()
