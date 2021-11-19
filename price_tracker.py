@@ -20,7 +20,7 @@ def track_current_price() -> list:
     # List of current prices
     price_list = []
 
-    while minutes_passed != 2:
+    while minutes_passed != 60:
         # Update Time
         today = datetime.now()
         current_time = today.strftime('%I:%M:%S %p')
@@ -54,4 +54,3 @@ if __name__ == '__main__':
     track_current_price()
     hour_max_price()
     get_max_price()
-    
