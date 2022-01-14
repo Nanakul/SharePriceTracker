@@ -14,9 +14,19 @@ def get_closing_price():
     response = requests.get(AV_ENDPOINT, params=querystring)
     data = response.json()['Time Series (Daily)']
     data_list = [value for (key, value) in data.items()]
-    yesterday_data = data_list[0]
-    yesterday_cp = yesterday_data['4. close']
-    print(yesterday_cp)
+
+    for i in range(len(data_list)):
+        data_list[i] = {
+            'Close': data_list[i]['4. close']
+        }
+
+    # Get yesterday's close price
+    yday_cp = data_list[0]['Close']
+    print(yday_cp)
+
+    # Get day before yesterday's close price
+    dby_cp = data_list[1]['Close']
+    print(dby_cp)
 
 
 if __name__ == '__main__':
