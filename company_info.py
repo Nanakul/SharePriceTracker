@@ -20,6 +20,8 @@ def get_closing_price():
             'Close': data_list[i]['4. close']
         }
 
+        print(data_list[i])
+
     # Get yesterday's close price
     yday_cp = data_list[0]['Close']
     print(yday_cp)
@@ -27,6 +29,16 @@ def get_closing_price():
     # Get day before yesterday's close price
     dby_cp = data_list[1]['Close']
     print(dby_cp)
+
+    # Get absolute difference between the two days
+    difference = abs(float(yday_cp) - float(dby_cp))
+    print(difference)
+    diff_percent = (difference / float(yday_cp)) * 100
+    print(diff_percent)
+
+    # Check if difference is greater than 5%
+    if diff_percent > 5:
+        pass
 
 
 if __name__ == '__main__':
